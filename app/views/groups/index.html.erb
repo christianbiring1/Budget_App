@@ -7,7 +7,11 @@
     <div class="card d-flex flex-row m-1 p-1" style="width: 100%">
         <div>
             <span class="material-symbols-outlined img">
+                <%if g.icon.size < 100 %>
+                    <%= image_tag "default.png", class: "img-fluid", style:"width: 80px;" %>
+                <% else %>
                     <%=image_tag g.icon, class:"img-fluid", style:"width: 80px;" %>
+                <% end %>
             </span>
         </div>
     
