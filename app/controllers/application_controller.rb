@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: %i[home] 
   before_action :update_allowed_paremeters, if: :devise_controller?
 
+  def after_sign_in_path_for(resource)
+    user_groups_path(current_user.id)
+  end
+
   protected
 
   def update_allowed_paremeters
