@@ -13,7 +13,7 @@ class EntitiesController < ApplicationController
     @entity = @group.entities.build(entity_params)
     @entity.user = current_user
     if @entity.save
-      flash[:notice] = "Entity created Successfully!"
+      flash[:notice] = 'Entity created Successfully!'
       redirect_to user_group_entities_path(current_user, @group.id)
     else
       flash[:alert] = 'Ooops! Entity not created...'
