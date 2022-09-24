@@ -31,8 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_140405) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.bigint "entity_id", null: false
-    t.index ["entity_id"], name: "index_groups_on_entity_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
@@ -51,6 +49,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_140405) do
 
   add_foreign_key "entities", "groups"
   add_foreign_key "entities", "users"
-  add_foreign_key "groups", "entities"
   add_foreign_key "groups", "users"
 end

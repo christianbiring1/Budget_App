@@ -1,6 +1,16 @@
 class Entity < ApplicationRecord
-  belongs_to :user, foreign_key: 'user_id'
-  has_many :groups, foreign_key: 'entity_id'
+  # Ordered by the date of creation
+  default_scope { order(created_at: :desc) }
+  after_initialize :initial
 
-  validate :name, :icon, presence: true
+  belongs_to :user, foreign_key: 'user_id'
+  belongs_to :group
+
+  validates :name, :amount, presence: true
+  validates :amount, numercality: { greater_than_or_equal_to: 0 }
+
+
+  def initial
+    self.amount ||= 0
+  end
 end
