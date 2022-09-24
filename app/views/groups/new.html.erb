@@ -1,0 +1,15 @@
+<%= render 'shared/group_nav'%>
+<div class="add_category">
+<div class="container">
+    <div class="separation"></div>
+    <h5 class="text-center text-muted mb-2"> Add category </h5>
+    <div class="group_form">
+        <%= form_with model:[current_user, current_user.groups.build] , local: true do |form|%>
+            <%= form.text_field :name, required: true, placeholder:"category name"%>
+            <%= form.text_field :icon, required: true, placeholder:"Icon URL"%>
+            <%= form.submit "SAVE",class:"btn btn-sm btn-success"  %>
+        <% end %>
+    </div>
+    <hr />
+</div>
+</div>
