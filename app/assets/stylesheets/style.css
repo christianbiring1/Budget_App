@@ -35,7 +35,6 @@ h6 {
   transform: translate(-50%, -50%);
 }
 
-
 a {
   text-decoration: none;
   color: var(--text-color-dark);
@@ -93,6 +92,18 @@ form {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+input {
+  border: 1px solid #434b54;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+}
+
+input:focus {
+  border-color: #3778c2;
+  outline-color: rgba(55, 120, 194, 0.5);
+  outline-width: 1px;
 }
 
 .devise-form input[type="submit"] {
@@ -159,22 +170,9 @@ form {
   background-color: var(--text-color-light);
 }
 
-
 .add_category {
   width: 60%;
   margin: 100px auto;
-}
-
-input {
-  border: 1px solid #434b54;
-  border-radius: 5px;
-  padding: 0.2rem 0.5rem;
-}
-
-input:focus {
-  border-color: #3778c2;
-  outline-color: rgba(55, 120, 194, 0.5);
-  outline-width: 1px;
 }
 
 .transaction_input {
