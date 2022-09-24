@@ -1,0 +1,5 @@
+<%= form_with model:[current_user, @group, @group.entities.build] , local: true do |form|%>
+    <%= form.text_field :name, placeholder:"transaction name", class:"transaction_input"  %>
+    <%= form.number_field :amount, class:"transaction_input"  %>
+    <%= form.submit "SAVE", class:"btn btn-sm btn-success"%>
+<% end %>

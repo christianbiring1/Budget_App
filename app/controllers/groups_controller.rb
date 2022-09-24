@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
   def index
     @groups = current_user.groups.all
-    # @icons = Group.icon
   end
 
   def create

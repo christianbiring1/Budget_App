@@ -1,7 +1,7 @@
 class EntitiesController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
-    @entities = current_user.intities
+    @entities = current_user.entities
   end
 
   def new
@@ -25,6 +25,7 @@ class EntitiesController < ApplicationController
     @group = Group.find(params[:group_id])
     @entity = Entity.find(params[:id])
     @entity.destroy
+    flash[:alert] = 'Entity deleted successfully!'
     redirect_to user_group_entities_path(current_user, @group)
   end
 
